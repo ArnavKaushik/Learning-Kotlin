@@ -5,3 +5,6 @@ Welcome to a guide for learning Kotlin. This guide will include the basics and s
 
 Things to be done in the future:
 * Swift -> Kotlin Guide for iOS Developers
+
+
+Kotlin Trademark is protected under the Kotlin Foundation and not affiliated with this repository.
