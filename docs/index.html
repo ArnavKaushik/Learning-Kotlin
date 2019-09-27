@@ -3,25 +3,28 @@
 <link rel= "stylesheet" href="main.css">
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=kotlin&amp;skin=desert"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="icon" 
+      type="image/png" 
+      href="kotlinlogo.png">
 <title>An Introduction to Kotlin</title>
 </head>
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#toc_0">Home</a>
+  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <a href="#0">Home</a>
   
 </div>
 
 <body>
 
-<span style=" display: block;float: left;font-size:30px;cursor:pointer, position: absolute; margin-top: -10px; margin-left: -50px; z-index: 999px;" onclick="openNav()">&#9776;</span>
+<!--<span style="display: block;float: left;font-size:30px;cursor:pointer, position: fixed; margin-top: -10px; margin-left: -50px; z-index: 999px;" onclick="openNav()">&#9776;</span>-->
 
 
 <div id="main">
 <!-- Begin Markdown -->
 
 
-
+<a name='0'></a>
 <h1 id="toc_0">An Introduction to Kotlin</h1>
 
 <p>By Arnav Kaushik</p>
@@ -30,13 +33,22 @@
 
 <h3 id="toc_2">Main</h3>
 
-<p>Main is an the entry point for a Kotlin. It is used to begin program execution.</p>
+<p>Main is an entry point for a Kotlin. It is used to begin program execution.</p>
 
 <div><pre><code class="language-none">fun main() {
     println(&quot;Hello World&quot;)
 }</code></pre></div>
 
-<h3 id="toc_3">Variables</h3>
+<h3 id="toc_3">Printing</h3>
+
+<p>Printing in Kotlin will print to the console of your IDE. There are two main print functions:</p>
+
+<div><pre><code class="language-none">print()
+println()</code></pre></div>
+
+<p><code>print</code> will print on the same line as the last line printed, and <code>println</code> will print a new line. A <code>println</code> followed by a <code>print</code> will print the second statement on a new line, since the last line printed was a new line.</p>
+
+<h3 id="toc_4">Variables</h3>
 
 <p>To create a variable, use the keyword <code>var</code>. A variable can be mutated and assigned a value.</p>
 
@@ -53,16 +65,16 @@ helloWorld = &quot;Hello World!&quot;</code></pre></div>
 <li>Objects</li>
 </ul>
 
-<h3 id="toc_4">Constants</h3>
+<h3 id="toc_5">Constants</h3>
 
-<p>To create a constant, use the keyword <code>val</code>. A constant can NOT be altered, and will contain the value at its initialiation.</p>
+<p>To create a constant, use the keyword <code>val</code>. A constant can NOT be altered, and will contain the value at its initialization.</p>
 
 <div><pre><code class="language-none">val helloWorld = &quot;Hello World&quot;
 //helloWorld = &quot;A&quot; will not work</code></pre></div>
 
 <p>It is read only after being initialized.</p>
 
-<h3 id="toc_5">Functions</h3>
+<h3 id="toc_6">Functions</h3>
 
 <p>To create a function, use the keyword <code>fun</code>. A function will execute the code in its body and may return a value. It can also accept arguments.</p>
 
@@ -86,7 +98,7 @@ helloWorld = &quot;Hello World!&quot;</code></pre></div>
 
 <div><pre><code class="language-none">fun sum(a: Int, b: Int) = a + b</code></pre></div>
 
-<h3 id="toc_6">Comments</h3>
+<h3 id="toc_7">Comments</h3>
 
 <p>Comments can be used to mark up code. Anything in a comment will NOT be executed.</p>
 
@@ -103,7 +115,7 @@ Comments
 like this
 */</code></pre></div>
 
-<h3 id="toc_7">String templates</h3>
+<h3 id="toc_8">String templates</h3>
 
 <p>Strings can contain other variables and values. This can be done using <code>$</code>.</p>
 
@@ -117,7 +129,7 @@ println(s1) // &quot;2&quot;</code></pre></div>
 val s1 = &quot;${a + 2}&quot;
 println(s1) //&quot;3&quot;</code></pre></div>
 
-<h3 id="toc_8">Conditional expression</h3>
+<h3 id="toc_9">Conditional expression</h3>
 
 <p>Conditional expressions evaluate a condition and executes the code corresponding to that condition.</p>
 
@@ -133,7 +145,7 @@ if ( a &lt; b ) {
 
 <div><pre><code class="language-none">fun maxOf(int a, int b) = if (a &gt; b) a else b</code></pre></div>
 
-<h3 id="toc_9">Null values and optionals</h3>
+<h3 id="toc_10">Null values and optionals</h3>
 
 <p>Null values (<code>null</code>) are values that do not have a value. This is denoted with a <code>?</code>.</p>
 
@@ -158,7 +170,7 @@ if ( a &lt; b ) {
 
 }</code></pre></div>
 
-<h3 id="toc_10">Type Checks</h3>
+<h3 id="toc_11">Type Checks</h3>
 
 <p>The <code>is</code> operator can check if an expression is an instance of a type. If true, then the expression is automatically casted. If not, it remains the type <code>Any</code>.</p>
 
@@ -166,29 +178,88 @@ if ( a &lt; b ) {
     return obj.length
 }</code></pre></div>
 
-<h3 id="toc_11">Control loops</h3>
+<h3 id="toc_12">Control loops</h3>
 
 <p>Control Loops are ways to execute code for a certain amount of times.</p>
 
-<h4 id="toc_12"><strong>While loops</strong></h4>
+<h4 id="toc_13"><strong>While loops</strong></h4>
 
 <p>While loops run until a condition is complete.</p>
 
 <div><pre><code class="language-none">int a = 1
-while(a &lt; 10) { //run 9 times
+while(a &lt; 10) { //runs 9 times
     println(a)
     a++
 }</code></pre></div>
 
-<h4 id="toc_13"><strong>For loops</strong></h4>
+<p>It is common to use while loops for boolean values such as <code>running</code>.</p>
 
-<p>For loops run for a certain amount of times or for each element in an array.</p>
+<h4 id="toc_14"><strong>For loops</strong></h4>
 
-<div><pre><code class="language-none">for</code></pre></div>
+<p>For loops run for a certain amount of times or for each element in an array. A <code>for</code> loop uses <code>in</code> to determine the range.</p>
+
+<p>To iterate over a range, use the range expression <code>..</code>.</p>
+
+<div><pre><code class="language-none">for (i in 1..4) {
+    println(i)
+}</code></pre></div>
+
+<p>You can also use <code>downTo</code> and <code>step</code> for a more customized range.</p>
+
+<div><pre><code class="language-none">for (i in 6 downTo 0 step 2) {
+    println(i)
+}</code></pre></div>
+
+<p>When you have a collection of elements, it is often easier to use a <code>foreach</code> loop. A <code>foreach</code> loop will only allow read access to an item in a list, and will not provide an index.</p>
+
+<div><pre><code class="language-none">for (item in list) println(item)</code></pre></div>
+
+<p>To iterate through an array with the index, use the <code>indices</code> property of an array.</p>
+
+<div><pre><code class="language-none">for (i in array.indices) {
+    print(array[i])
+}</code></pre></div>
+
+<h4 id="toc_15"><strong>When statements</strong></h4>
+
+<p>A <code>when</code> statements replaces the <code>switch</code> operator of many C based languages.
+When statements iterate through the various cases defined by you and has a default in case there is no case to match.</p>
+
+<p>Here is an example of a switch statement to determine odd or even numbers:</p>
+
+<div><pre><code class="language-none">when(x) {
+    x.isOdd() -&gt; println(&quot;x is odd&quot;)
+    x.isEven() -&gt; println(&quot;x is even&quot;)
+    else -&gt; println(&quot;x is not odd or even&quot;)
+}</code></pre></div>
+
+<p>You can use <code>ranges</code>, <code>is</code> and <code>!is</code>, inequalities and raw values as potential cases.</p>
+
+<h3 id="toc_16">Collections</h3>
+
+<p>Collections are important in any language, and go by many names (array, list etc). Kotlin collections are created by using <code>listOf</code>.</p>
+
+<div><pre><code class="language-none">val colors = listOf(&quot;red&quot;, &quot;blue&quot;, &quot;orange&quot;);</code></pre></div>
+
+<p>Collections can be access using <code>[]</code>.</p>
+
+<div><pre><code class="language-none">print(colors[0]) //prints &quot;red&quot;</code></pre></div>
+
+<p>Collections can also be filtered using <code>.filter()</code>.</p>
+
+<div><pre><code class="language-none">colors.filter { it.startsWith(&quot;b&quot;) }</code></pre></div>
+
+<p>The variable <code>it</code> refers to each element (an internal foreach loop).</p>
+
+<h2 id="toc_17">Conclusion</h2>
+
+<p>Hopefully this section explains the fundamentals for Kotlin. We will be covering functions and objects in the next section. Thanks for reading!</p>
+
 
 
 <!-- End Markdown -->
 </div>
+&copy; <script>document.write(new Date().getFullYear());</script>, Arnav Kaushik. All Rights Reserved. Kotlin Trademark is protected under the Kotlin Foundation and not affiliated with this website.
 
 </body>
 
@@ -213,7 +284,7 @@ while(a &lt; 10) { //run 9 times
    var prevH2Item = null;                                                            
     var prevH2List = null;                                                            
     
-    var index = 0;                                                                    
+    var index = 1;                                                                    
     $("h2, h3, h4").each(function() {                                                     
     
         //insert an anchor to jump to, from the TOC link.            
@@ -231,7 +302,9 @@ while(a &lt; 10) { //run 9 times
             prevH2List.append(li);                                  
         }                                                           
         index++;                                                    
-    });    
+    });  
+
+    openNav();  
 
 
     function openNav() {

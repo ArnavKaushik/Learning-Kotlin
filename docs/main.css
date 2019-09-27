@@ -18,6 +18,7 @@ img {
   font: inherit;
   vertical-align: baseline;
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
 }
 html * {
   font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
@@ -212,6 +213,8 @@ kbd {
   transition: 0.5s;
   padding-top: 60px;
 }
+
+.sidenav::-webkit-scrollbar { width: 0 !important }
 
 .sidenav a,
 .sidenav a:active,
