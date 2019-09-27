@@ -1,18 +1,27 @@
 <html>
 <head>
 <link rel= "stylesheet" href="main.css">
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=kotlin&amp;skin=desert"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>An Introduction to Kotlin</title>
 </head>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">Home</a>
-  <a href="#">Basics</a>
+  <a href="#toc_0">Home</a>
   
 </div>
 
-
 <body>
+
+<span style=" display: block;float: left;font-size:30px;cursor:pointer, position: absolute; margin-top: -10px; margin-left: -50px; z-index: 999px;" onclick="openNav()">&#9776;</span>
+
+
+<div id="main">
+<!-- Begin Markdown -->
+
+
+
 <h1 id="toc_0">An Introduction to Kotlin</h1>
 
 <p>By Arnav Kaushik</p>
@@ -161,7 +170,7 @@ if ( a &lt; b ) {
 
 <p>Control Loops are ways to execute code for a certain amount of times.</p>
 
-<h2 id="toc_12"><strong>While loops</strong></h2>
+<h4 id="toc_12"><strong>While loops</strong></h4>
 
 <p>While loops run until a condition is complete.</p>
 
@@ -171,24 +180,69 @@ while(a &lt; 10) { //run 9 times
     a++
 }</code></pre></div>
 
-<h2 id="toc_13"><strong>For loops</strong></h2>
+<h4 id="toc_13"><strong>For loops</strong></h4>
 
 <p>For loops run for a certain amount of times or for each element in an array.</p>
 
 <div><pre><code class="language-none">for</code></pre></div>
+
+
+<!-- End Markdown -->
+</div>
+
 </body>
 
 
 
 <script type="text/javascript">
     
-    var listOfBasics = document.querySelectorAll("h3");
-    for (item in listOfBasics) {
-        document.getElementById("mySidenav").innerHTML += "<a href=\"#" + item.id + "\">" + item.innerHTML + "</a>";
+    // var listOfBasics = document.querySelectorAll("h3");
+    // for (i in listOfBasics) {
+    //     var item = listOfBasics[i];
+    //     console.log(item);
+    //     console.log("<a href=\"#" + item.id + "\">" + item.innerHTML + "</a>");
+    //     document.getElementById("mySidenav").innerHTML += "<a href=\"#" + item.id + "\">  " + item.innerHTML + "</a>";
+        
+    // }
+
+    $("code").removeClass("language-none").addClass("prettyprint");
+    // $("h3").append("<a href=\"#" + item.id + "\">  " + item.innerHTML + "</a>")
+
+
+
+   var prevH2Item = null;                                                            
+    var prevH2List = null;                                                            
+    
+    var index = 0;                                                                    
+    $("h2, h3, h4").each(function() {                                                     
+    
+        //insert an anchor to jump to, from the TOC link.            
+        var anchor = "<a name='" + index + "'></a>";                 
+        $(this).before(anchor);                                     
+        
+        var li     = "<ul><a href='#" + index + "'>" + $(this).text() + "</a></ul>"; 
+        
+        if( $(this).is("h2") ){                                     
+            prevH2List = $("<ul></ul>");                
+            prevH2Item = $(li);                                     
+            prevH2Item.append(prevH2List);                          
+            prevH2Item.appendTo("#mySidenav");                        
+        } else {                                                    
+            prevH2List.append(li);                                  
+        }                                                           
+        index++;                                                    
+    });    
+
+
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
     }
 
-
-
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
 
 
 

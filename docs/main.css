@@ -17,6 +17,7 @@ img {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  scroll-behavior: smooth;
 }
 html * {
   font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
@@ -36,7 +37,7 @@ strong {
 }
 ol,
 ul {
-  margin-left: 2em;
+  margin-left: 10px;
   margin-bottom: 20px;
 }
 ul ul,
@@ -153,11 +154,12 @@ html a:visited {
   color: #586e75;
 }
 html a:hover {
-  background-color: #eee8d5;
+  background-color: #586e75;
 }
 html pre {
   color: #586e75;
-  background-color: #eeeeee;
+  background-color: #333;
+  border-radius: 3px;
 }
 html a,
 html a:active,
@@ -205,24 +207,27 @@ kbd {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #34495e;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
 
-.sidenav a {
+.sidenav a,
+.sidenav a:active,
+.sidenav a:visited {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #ecf0f1;
   display: block;
   transition: 0.3s;
+  font-size: 20px;
 }
 
-.sidenav a:hover {
+/*.sidenav a:hover {
   color: #f1f1f1;
-}
+}*/
 
 .sidenav .closebtn {
   position: absolute;
