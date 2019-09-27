@@ -1,3 +1,5 @@
+![Image](https://github.com/ArnavKaushik/Learning-Kotlin/raw/master/docs/reposocialbanner.jpg)
+
 # Learning-Kotlin
 A Beginner's Guide to Kotlin
 
