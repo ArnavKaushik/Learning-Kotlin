@@ -3,6 +3,15 @@
 <link rel= "stylesheet" href="main.css">
 <title>An Introduction to Kotlin</title>
 </head>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Home</a>
+  <a href="#">Basics</a>
+  
+</div>
+
+
 <body>
 <h1 id="toc_0">An Introduction to Kotlin</h1>
 
@@ -168,4 +177,22 @@ while(a &lt; 10) { //run 9 times
 
 <div><pre><code class="language-none">for</code></pre></div>
 </body>
+
+
+
+<script type="text/javascript">
+    
+    var listOfBasics = document.querySelectorAll("h3");
+    for (item in listOfBasics) {
+        document.getElementById("mySidenav").innerHTML += "<a href=\"#" + item.id + "\">" + item.innerHTML + "</a>";
+    }
+
+
+
+
+
+
+</script>
+
+
 </html>
