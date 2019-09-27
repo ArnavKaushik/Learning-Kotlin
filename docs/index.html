@@ -1,0 +1,171 @@
+<html>
+<head>
+<link rel= "stylesheet" href="main.css">
+<title>An Introduction to Kotlin</title>
+</head>
+<body>
+<h1 id="toc_0">An Introduction to Kotlin</h1>
+
+<p>By Arnav Kaushik</p>
+
+<h2 id="toc_1">The Basics</h2>
+
+<h3 id="toc_2">Main</h3>
+
+<p>Main is an the entry point for a Kotlin. It is used to begin program execution.</p>
+
+<div><pre><code class="language-none">fun main() {
+    println(&quot;Hello World&quot;)
+}</code></pre></div>
+
+<h3 id="toc_3">Variables</h3>
+
+<p>To create a variable, use the keyword <code>var</code>. A variable can be mutated and assigned a value.</p>
+
+<div><pre><code class="language-none">var helloWorld = &quot;Hello World&quot;
+helloWorld = &quot;Hello World!&quot;</code></pre></div>
+
+<p>Types of data that can be assigned to a variable include:</p>
+
+<ul>
+<li>Strings</li>
+<li>Integers</li>
+<li>Floats</li>
+<li>Doubles</li>
+<li>Objects</li>
+</ul>
+
+<h3 id="toc_4">Constants</h3>
+
+<p>To create a constant, use the keyword <code>val</code>. A constant can NOT be altered, and will contain the value at its initialiation.</p>
+
+<div><pre><code class="language-none">val helloWorld = &quot;Hello World&quot;
+//helloWorld = &quot;A&quot; will not work</code></pre></div>
+
+<p>It is read only after being initialized.</p>
+
+<h3 id="toc_5">Functions</h3>
+
+<p>To create a function, use the keyword <code>fun</code>. A function will execute the code in its body and may return a value. It can also accept arguments.</p>
+
+<div><pre><code class="language-none">fun sayHelloWorld() {
+    println(&quot;Hello World&quot;)
+}</code></pre></div>
+
+<p>To return something from a function, use the <code>:</code> operator following the function.</p>
+
+<div><pre><code class="language-none">fun sayHelloWorld(): String {
+    return &quot;Hello World&quot;
+}</code></pre></div>
+
+<p>To pass arguments into the function, use the parameters inside the parenthesis.</p>
+
+<div><pre><code class="language-none">fun sayHelloWorld(name: String) {
+    println(&quot;Hello World ${name}&quot;)
+}</code></pre></div>
+
+<p>Functions can be written with an expression body and an inferred return type.</p>
+
+<div><pre><code class="language-none">fun sum(a: Int, b: Int) = a + b</code></pre></div>
+
+<h3 id="toc_6">Comments</h3>
+
+<p>Comments can be used to mark up code. Anything in a comment will NOT be executed.</p>
+
+<div><pre><code class="language-none">//Single Line Comment
+
+/*
+Multiline
+Comment
+*/
+
+/*
+Comments
+/*can also be nested*/
+like this
+*/</code></pre></div>
+
+<h3 id="toc_7">String templates</h3>
+
+<p>Strings can contain other variables and values. This can be done using <code>$</code>.</p>
+
+<div><pre><code class="language-none">var a = 2
+val s1 = &quot;$a&quot; 
+println(s1) // &quot;2&quot;</code></pre></div>
+
+<p>You can also place expressions inside of the brackets.</p>
+
+<div><pre><code class="language-none">var a = 1
+val s1 = &quot;${a + 2}&quot;
+println(s1) //&quot;3&quot;</code></pre></div>
+
+<h3 id="toc_8">Conditional expression</h3>
+
+<p>Conditional expressions evaluate a condition and executes the code corresponding to that condition.</p>
+
+<div><pre><code class="language-none">int a = 1
+int b = 2
+if ( a &lt; b ) {
+    println(b)
+} else {
+    println(a)
+}</code></pre></div>
+
+<p><code>if</code> statements can also be used as an expression.</p>
+
+<div><pre><code class="language-none">fun maxOf(int a, int b) = if (a &gt; b) a else b</code></pre></div>
+
+<h3 id="toc_9">Null values and optionals</h3>
+
+<p>Null values (<code>null</code>) are values that do not have a value. This is denoted with a <code>?</code>.</p>
+
+<p>For example, let&#39;s say we have a function called <code>parseInt</code> that returns an <code>Int?</code>. </p>
+
+<div><pre><code class="language-none">    fun parseInt(str: String): Int? {
+        //...
+    }</code></pre></div>
+
+<p>Let&#39;s create a function called <code>printProduct</code> that prints the product of two strings if they are <code>Int</code>.</p>
+
+<div><pre><code class="language-none">fun printProduct(arg1: String, arg2: String) {
+    val x = parseInt(arg1) //Int?
+    val y = parseInt(arg2) //Int?
+
+    if (x != null &amp;&amp; y != null) {
+        //Because both x and y have been null checked (!= null), they are automatically casted to non-nullable
+        println(x * y)
+    } else {
+        println(&quot;The arguments passed are not integers.&quot;)
+    }
+
+}</code></pre></div>
+
+<h3 id="toc_10">Type Checks</h3>
+
+<p>The <code>is</code> operator can check if an expression is an instance of a type. If true, then the expression is automatically casted. If not, it remains the type <code>Any</code>.</p>
+
+<div><pre><code class="language-none">if (obj is String) {
+    return obj.length
+}</code></pre></div>
+
+<h3 id="toc_11">Control loops</h3>
+
+<p>Control Loops are ways to execute code for a certain amount of times.</p>
+
+<h2 id="toc_12"><strong>While loops</strong></h2>
+
+<p>While loops run until a condition is complete.</p>
+
+<div><pre><code class="language-none">int a = 1
+while(a &lt; 10) { //run 9 times
+    println(a)
+    a++
+}</code></pre></div>
+
+<h2 id="toc_13"><strong>For loops</strong></h2>
+
+<p>For loops run for a certain amount of times or for each element in an array.</p>
+
+<div><pre><code class="language-none">for</code></pre></div>
+</body>
+</html>
