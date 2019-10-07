@@ -306,7 +306,10 @@ When statements iterate through the various cases defined by you and has a defau
         index++;                                                    
     });  
 
-    openNav();  
+    setTimeout( function() {
+        openNav();
+    }, 200);
+      
 
 
     function openNav() {
